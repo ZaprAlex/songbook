@@ -1,0 +1,108 @@
+@import './mixins';
+
+html {
+    height: 100%;
+    font-size: 18px;
+
+    @include adaptive-for-mobile {
+        font-size: 12px;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SBSansDisplay-Regular', 'SBSansDisplay-Bold',
+        'SBSansDisplay-SemiBold', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    /*-webkit-font-smoothing: antialiased;*/
+    /*-moz-osx-font-smoothing: grayscale;*/
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-weight: unset;
+    margin-block-start: unset;
+    margin-block-end: unset;
+    margin-inline-start: unset;
+    margin-inline-end: unset;
+}
+
+#root {
+    height: 100%;
+}
+
+.react-autosuggest__container {
+    position: relative;
+}
+
+.react-autosuggest__suggestions-container {
+    display: none;
+}
+
+.react-autosuggest__suggestions-container--open {
+    display: block;
+    position: absolute;
+    top: 75px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04), 0 16px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    overflow-y: scroll;
+    max-height: 240px;
+    z-index: 1;
+}
+
+.react-autosuggest__suggestions-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0 16px;
+}
+
+.react-autosuggest__suggestion:last-child > div {
+    border-bottom: none;
+}
+
+.react-autosuggest__suggestion--highlighted {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+:root {
+    /*
+    ** For adaptive design use formula with var "--sf" (scaling factor):
+    ** 24px = calc(24 * var(--sf));
+    ** -0.3px = calc(-0.3 * var(--sf));
+    */
+
+    /* TODO: выпилить после перехода на адаптивный дизайн
+    ** Scaling factor, default value for initialize var, changed in index.js
+    ** value = 100 / 834; where 834 - default screen width
+    */
+    --sf: 0.11990407673860912vw;
+
+    @include adaptive-for-desktop {
+        --sf: 0.100806452vw;
+    }
+}

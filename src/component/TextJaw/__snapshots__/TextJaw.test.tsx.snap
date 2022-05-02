@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextJaw snap default 1`] = `
+<div
+  class="textWrapper"
+  data-test-id="text-jaw"
+>
+  <p
+    class="text inline"
+  >
+    PROMO_CODE
+  </p>
+  <img
+    alt=""
+    src="copy-icon.svg"
+  />
+</div>
+`;

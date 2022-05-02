@@ -1,0 +1,31 @@
+.content {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+
+    & > .block {
+        box-sizing: border-box;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        margin: 0 auto;
+        //flex-grow: 1;
+        height: 200px;
+        padding: 8px;
+
+        & > .title {
+            font-family: SBSansText-Regular, SBSansDisplay-Regular, sans-serif;
+            font-size: 14px;
+            color: orangered;
+        }
+
+        & > img {
+            height: 150px;
+            width: auto;
+        }
+    }
+}

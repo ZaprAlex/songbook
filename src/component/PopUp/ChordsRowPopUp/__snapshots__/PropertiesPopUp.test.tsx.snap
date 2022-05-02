@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PropertiesPopUp render all 1`] = `
+<div
+  class="content"
+>
+  <p
+    class="title"
+  >
+    testModalTitle
+  </p>
+  <div
+    class="content"
+  >
+    <div
+      class="block"
+    >
+      <p
+        class="description"
+      >
+        Номер заказа
+      </p>
+      <p
+        class="property"
+      >
+        SBM-002-123456789
+      </p>
+    </div>
+    <div
+      class="block"
+    >
+      <p
+        class="description"
+      >
+        Название продуктового предложения
+      </p>
+      <p
+        class="property"
+      >
+        ОККО "Оптимум"
+      </p>
+    </div>
+    <div
+      class="block"
+    >
+      <p
+        class="property"
+      >
+        Предложение действует только до конца месяца
+      </p>
+    </div>
+  </div>
+  <div
+    class="footer"
+  >
+    <button
+      class="btn btn-green btn-contained btn-middle btnSkeuomorph"
+      data-test-id="information-close-button"
+      type="button"
+    >
+      <span
+        class="buttonLabel"
+      >
+        Понятно
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`PropertiesPopUp render empty list 1`] = `
+<div
+  class="content"
+>
+  <div
+    class="content"
+  />
+  <div
+    class="footer"
+  >
+    <button
+      class="btn btn-green btn-contained btn-middle btnSkeuomorph"
+      data-test-id="information-close-button"
+      type="button"
+    >
+      <span
+        class="buttonLabel"
+      >
+        Понятно
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`PropertiesPopUp render properties == null 1`] = `
+<div
+  class="content"
+>
+  <div
+    class="content"
+  />
+  <div
+    class="footer"
+  >
+    <button
+      class="btn btn-green btn-contained btn-middle btnSkeuomorph"
+      data-test-id="information-close-button"
+      type="button"
+    >
+      <span
+        class="buttonLabel"
+      >
+        Понятно
+      </span>
+    </button>
+  </div>
+</div>
+`;

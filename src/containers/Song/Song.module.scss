@@ -1,0 +1,94 @@
+.page {
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    background: #ffffff;
+
+    &.dark {
+        background: #000000;
+    }
+}
+
+.content {
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 50px 20px;
+}
+
+.header {
+    margin-bottom: 20px;
+    color: #000000;
+
+    &.dark {
+        color: #ff9900;
+    }
+}
+
+.author {
+    cursor: pointer;
+    color: blue;
+
+    &.dark {
+        color: deepskyblue;
+    }
+}
+
+.lyrics {
+    width: fit-content;
+
+    & > .row {
+        width: 100%;
+        font-family: "Courier New", serif;
+        text-align: left;
+        white-space: pre-wrap;
+        color: #000000;
+
+        &.dark {
+            color: #ff9900;
+        }
+    }
+}
+
+.chord {
+    color: red !important;
+    cursor: pointer;
+
+    .dark > & {
+        color: #44d370;
+    }
+}
+
+.buttons-block {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    & > * {
+        margin-bottom: 16px;
+
+        &:nth-last-child(1) {
+            margin-bottom: 0;
+        }
+    }
+
+    & > .active {
+        background: #21ba72;
+    }
+
+    & > .speed {
+        width: 32px;
+        height: 32px;
+        background: #7f7f7f;
+    }
+}

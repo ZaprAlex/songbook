@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page404 should render 1`] = `
+<div
+  class="page"
+>
+  <div
+    class="content content"
+  >
+    <div
+      class="iconWrapper"
+    >
+      <img
+        alt=""
+        class="icon"
+        data-test-id="inform-container-icon"
+        src="cat-empty.png"
+      />
+    </div>
+    <div
+      class="header"
+    >
+      Страница не найдена
+    </div>
+    <div
+      class="message"
+    >
+      Попробуйте перейти на главную
+    </div>
+    <div
+      class="buttonBlock"
+    >
+      <button
+        class="btn btn-green btn-contained btn-x-large btnSkeuomorph button"
+        data-test-id="button-submit"
+        type="button"
+      >
+        <span
+          class="buttonLabel"
+        >
+          На главную
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

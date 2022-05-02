@@ -1,0 +1,35 @@
+.page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: -100px;
+    width: 520px;
+}
+
+@media (max-width: 575px) {
+    .content {
+        width: 280px;
+    }
+}
+
+@media (max-width: 1367px) and (orientation: landscape) {
+    .content {
+        width: 560px;
+    }
+}
+
+.button {
+    margin-top: 32px;
+}

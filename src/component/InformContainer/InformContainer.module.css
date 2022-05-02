@@ -1,0 +1,52 @@
+.content {
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.icon-wrapper {
+    width: 100%;
+    height: 256px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.icon {
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+    text-align: center;
+    white-space: pre-wrap;
+    color: #000000;
+}
+
+.message {
+    width: 100%;
+    margin-top: 16px;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: -0.3px;
+    text-align: center;
+    white-space: pre-wrap;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.button-block {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-block > *:not(:first-child) {
+    margin-left: 24px;
+}

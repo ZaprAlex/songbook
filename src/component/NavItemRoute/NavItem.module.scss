@@ -1,0 +1,60 @@
+@import '../../styles/mixins';
+
+.nav-item {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: nowrap;
+
+    padding: 6px 16px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: transparent;
+    font-family: SBSansText-Medium, sans-serif;
+    font-size: 16px;
+    letter-spacing: -0.1px;
+    cursor: pointer;
+
+    // Для мобильных устройств навигация перемещается с верхней на боковую панель
+    &.sidebar-item {
+        padding: 14px 12px;
+        width: 100%;
+        height: 52px;
+        justify-content: start;
+        border-radius: unset;
+        font-family: SBSansText-Regular, sans-serif;
+        font-size: 16px;
+    }
+}
+
+.dark {
+    color: #ffffff;
+}
+
+.light {
+    @include adaptive-except-mobile {
+        color: rgba(0, 0, 0, 0.56);
+    }
+}
+
+.active {
+    @include adaptive-except-mobile {
+        font-family: SBSansText-Semibold, sans-serif;
+    }
+
+    &.dark {
+        color: #000000;
+        background-color: #fff;
+    }
+
+    &.light {
+        color: #21ba72;
+    }
+
+    @include adaptive-for-mobile {
+        color: #000000;
+        background: #f9f9f9;
+        border-radius: 8px;
+    }
+}

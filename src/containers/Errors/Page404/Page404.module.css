@@ -1,0 +1,21 @@
+.page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: -100px;
+}
+
+.button {
+    margin-top: 24px;
+}

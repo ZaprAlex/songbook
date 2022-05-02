@@ -1,0 +1,230 @@
+@mixin btn-icon($name) {
+    &.btn-icon-#{$name} {
+        @content;
+    }
+}
+
+@mixin icon($btnHeight, $lblPadding, $btnPaddingVertical, $btnPaddingRight, $btnPaddingLeft) {
+    @include btn-icon(left) {
+        min-width: $btnHeight;
+        padding: $btnPaddingVertical $btnPaddingRight $btnPaddingVertical $btnPaddingLeft;
+        .buttonLabel {
+            padding-left: $lblPadding;
+        }
+    }
+    @include btn-icon(right) {
+        min-width: $btnHeight;
+        padding: $btnPaddingVertical $btnPaddingLeft $btnPaddingVertical $btnPaddingRight;
+        .buttonLabel {
+            padding-right: $lblPadding;
+        }
+    }
+    @include btn-icon(only) {
+        min-width: $btnHeight;
+        padding-right: 0;
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+.btn {
+    outline: 0 none;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-sizing: border-box;
+
+    font-family: SBSansText-Regular, sans-serif;
+
+    &:disabled {
+        pointer-events: none;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+
+    &-justify {
+        width: 100%;
+    }
+
+    /* size*/
+    &-small {
+        height: 40px;
+        min-width: 40px;
+        font-size: 14px;
+        line-height: 20px;
+
+        @include icon(40px, 6px, 8px, 22px, 14px);
+    }
+
+    &-middle {
+        height: 48px;
+        min-width: 48px;
+        font-size: 16px;
+        line-height: 24px;
+
+        @include icon(48px, 8px, 12px, 24px, 18px);
+    }
+
+    &-large {
+        height: 56px;
+        min-width: 56px;
+        font-size: 20px;
+        line-height: 28px;
+
+        @include icon(56px, 8px, 14px, 24px, 20px);
+    }
+
+    &-x-large {
+        height: 64px;
+        min-width: 64px;
+        font-size: 20px;
+        line-height: 28px;
+
+        @include icon(64px, 8px, 18px, 32px, 24px);
+    }
+
+    @media screen and (max-width: 575px) {
+        &-small {
+            min-width: 36px;
+            height: 36px;
+            font-size: 13px;
+            line-height: 20px;
+
+            @include icon(36px, 6px, 6px, 16px, 12px);
+        }
+
+        &-middle {
+            min-width: 40px;
+            height: 40px;
+            font-size: 14px;
+            line-height: 24px;
+
+            @include icon(40px, 10px, 8px, 20px, 14px);
+        }
+
+        &-large {
+            min-width: 52px;
+            height: 52px;
+            font-size: 18px;
+            line-height: 28px;
+
+            @include icon(52px, 6px, 12px, 24px, 18px);
+        }
+
+        &-x-large {
+            min-width: 60px;
+            height: 60px;
+            font-size: 18px;
+            line-height: 28px;
+
+            @include icon(60px, 8px, 16px, 24px, 20px);
+        }
+    }
+
+    &[class*='btn-icon'] {
+        .btn-icon {
+            vertical-align: middle;
+            line-height: normal;
+            width: 24px;
+            height: 24px;
+
+            svg,
+            img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    &-text {
+        background: transparent;
+        color: rgba(0, 0, 0, 0.56);
+        border: none;
+        &:hover {
+            color: #000000;
+            border: 1px solid rgba(0, 0, 0, 0.16);
+        }
+
+        &:active {
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        &[disabled] {
+            color: rgba(0, 0, 0, 0.32);
+            .btn-icon {
+                svg path {
+                    fill: rgba(0, 0, 0, 0.4);
+                }
+            }
+        }
+    }
+
+    &-contained {
+        &[disabled] {
+            background: rgba(0, 0, 0, 0.16);
+            box-shadow: none;
+            &.btn-withIcon {
+                svg path {
+                    fill: rgba(999, 999, 999, 1);
+                }
+            }
+        }
+    }
+
+    &-outline {
+        background: #ffffff;
+        color: #000000;
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        &[disabled] {
+            color: rgba(0, 0, 0, 0.4);
+            .btn-icon {
+                svg path {
+                    fill: rgba(0, 0, 0, 0.4);
+                }
+            }
+        }
+        &:hover {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.24);
+        }
+        &:active {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), #ffffff;
+        }
+    }
+
+    &-green {
+        &.btn-contained {
+            background: #21ba72;
+            color: #ffffff;
+
+            &:active {
+                background: #209f6d;
+                color: #ffffff;
+                border: none;
+            }
+            &:hover {
+                -webkit-animation: hover 1200ms linear 2 alternate;
+                animation: hover 1200ms linear 2 alternate;
+                background: #44d370;
+            }
+            &[disabled] {
+                background: rgba(0, 0, 0, 0.16);
+                box-shadow: none;
+            }
+        }
+
+        &.btn-skeuomorph {
+            box-shadow: 0 8px 16px -2px rgba(33, 186, 114, 0.32);
+        }
+    }
+}
+
+.button-label {
+    width: auto;
+    vertical-align: middle;
+    line-height: normal;
+}

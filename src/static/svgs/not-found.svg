@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="272" height="272" viewBox="0 0 272 272">
+    <defs>
+        <linearGradient id="4fcdhztz0a" x1="-10.495%" x2="112.592%" y1="90.068%" y2="45.232%">
+            <stop offset="0%" stop-color="#F39"/>
+            <stop offset="96.252%" stop-color="#FF9935"/>
+        </linearGradient>
+        <filter id="gxiqmbhc5b" width="125%" height="125%" x="-12.5%" y="-10.6%" filterUnits="objectBoundingBox">
+            <feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.023769674 0 0 0 0 0.126913283 0 0 0 0 0.180395154 0 0 0 0.1 0"/>
+        </filter>
+        <path id="se23wpqeac" d="M153.511 110L161.999 118.487 144.488 135.999 162 153.511 153.513 161.999 136 144.487 118.489 162 110.001 153.513 127.512 135.999 110 118.489 118.487 110.001 135.999 127.511z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g transform="translate(-281 -260) translate(281 260)">
+                <circle cx="136" cy="136" r="128" fill="url(#4fcdhztz0a)" opacity=".03"/>
+                <circle cx="136" cy="136" r="104" fill="url(#4fcdhztz0a)" opacity=".07"/>
+                <circle cx="136" cy="136" r="84" fill="url(#4fcdhztz0a)" opacity=".12"/>
+                <circle cx="136" cy="136" r="68" fill="url(#4fcdhztz0a)"/>
+                <g fill-rule="nonzero">
+                    <use fill="#000" filter="url(#gxiqmbhc5b)" xlink:href="#se23wpqeac"/>
+                    <use fill="#FFF" xlink:href="#se23wpqeac"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

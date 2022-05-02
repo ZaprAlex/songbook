@@ -1,0 +1,23 @@
+@import '../../styles/mixins';
+
+.nav {
+    display: flex;
+    align-items: center;
+    flex-flow: nowrap;
+
+    @include adaptive-for-mobile {
+        flex-direction: column;
+    }
+}
+
+.nav > * {
+    @include adaptive-except-mobile {
+        margin-right: 12px;
+    }
+}
+
+.nav > *:last-child {
+    @include adaptive-except-mobile {
+        margin-right: 0;
+    }
+}

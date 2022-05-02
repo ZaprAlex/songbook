@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackButton  Is func match snapshot and has right params 1`] = `
+<CustomModal>
+  <Modal
+    ariaHideApp={false}
+    bodyOpenClassName="body"
+    className="content informationModal"
+    closeTimeoutMS={0}
+    contentElement={[Function]}
+    isOpen={true}
+    onRequestClose={[Function]}
+    overlayClassName="overlay"
+    overlayElement={[Function]}
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    preventScroll={false}
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+  >
+    <Portal
+      containerInfo={
+        <div
+          class="ReactModalPortal"
+        >
+          <div
+            class="ReactModal__Overlay ReactModal__Overlay--after-open overlay"
+          >
+            <div
+              aria-modal="true"
+              class="ReactModal__Content ReactModal__Content--after-open content informationModal"
+              role="dialog"
+              tabindex="-1"
+            />
+          </div>
+        </div>
+      }
+    >
+      <ModalPortal
+        ariaHideApp={false}
+        bodyOpenClassName="body"
+        className="content informationModal"
+        closeTimeoutMS={0}
+        contentElement={[Function]}
+        defaultStyles={
+          Object {
+            "content": Object {
+              "WebkitOverflowScrolling": "touch",
+              "background": "#fff",
+              "border": "1px solid #ccc",
+              "borderRadius": "4px",
+              "bottom": "40px",
+              "left": "40px",
+              "outline": "none",
+              "overflow": "auto",
+              "padding": "20px",
+              "position": "absolute",
+              "right": "40px",
+              "top": "40px",
+            },
+            "overlay": Object {
+              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            },
+          }
+        }
+        isOpen={true}
+        onRequestClose={[Function]}
+        overlayClassName="overlay"
+        overlayElement={[Function]}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        preventScroll={false}
+        role="dialog"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {},
+            "overlay": Object {},
+          }
+        }
+      >
+        <div
+          className="ReactModal__Overlay ReactModal__Overlay--after-open overlay"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          style={Object {}}
+        >
+          <div
+            aria-modal={true}
+            className="ReactModal__Content ReactModal__Content--after-open content informationModal"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            role="dialog"
+            style={Object {}}
+            tabIndex="-1"
+          />
+        </div>
+      </ModalPortal>
+    </Portal>
+  </Modal>
+</CustomModal>
+`;

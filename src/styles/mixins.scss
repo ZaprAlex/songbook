@@ -1,0 +1,35 @@
+@import './variables';
+
+@mixin adaptive-for($device) {
+    @if $device == mobile {
+        @media (max-width: $min-tablet-width - 1) {
+            @content;
+        }
+    } @else if $device == tablet {
+        @media (min-width: $min-tablet-width) and (max-width: $min-desktop-width - 1) {
+            @content;
+        }
+    } @else if $device == desktop {
+        @media (min-width: $min-desktop-width) {
+            @content;
+        }
+    }
+}
+
+@mixin adaptive-for-mobile {
+    @include adaptive-for(mobile) {
+        @content;
+    }
+}
+
+@mixin adaptive-for-desktop {
+    @include adaptive-for(desktop) {
+        @content;
+    }
+}
+
+@mixin adaptive-except-mobile {
+    @media (min-width: $min-tablet-width) {
+        @content;
+    }
+}
