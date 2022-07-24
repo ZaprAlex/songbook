@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`full functionality 1`] = `"<div class=\\"content content\\"><div class=\\"header\\">TestHeader</div><div class=\\"message\\">TestMessage</div><div class=\\"buttonBlock\\"><button type=\\"button\\" class=\\"btn btn-green btn-contained btn-middle btnSkeuomorph button\\" data-test-id=\\"button-submit\\"><span class=\\"buttonLabel\\">TestButtonLabel</span></button></div></div>"`;
+
+exports[`w/o message and btn 1`] = `"<div class=\\"content content\\"><div class=\\"header\\">TestHeader</div><div class=\\"buttonBlock\\"></div></div>"`;

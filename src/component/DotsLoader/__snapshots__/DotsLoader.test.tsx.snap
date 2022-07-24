@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DotsLoader Snap w/o props 1`] = `
+<div
+  className="dotLoader white"
+>
+  <div />
+  <div />
+  <div />
+</div>
+`;
+
+exports[`DotsLoader Snap with color prop 1`] = `
+<div
+  className="dotLoader black"
+>
+  <div />
+  <div />
+  <div />
+</div>
+`;
+
+exports[`DotsLoader Snap with color props 1`] = `
+<div
+  className="dotLoader black"
+>
+  <div />
+  <div />
+  <div />
+</div>
+`;

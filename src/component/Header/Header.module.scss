@@ -49,10 +49,7 @@
     justify-content: space-between;
     align-items: center;
     flex-grow: 1;
-}
-
-.slot {
-    margin-right: 25px;
+    gap: 25px;
 }
 
 .slot:last-child {

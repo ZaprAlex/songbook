@@ -8,16 +8,6 @@ exports[`CommonError should render 1`] = `
     class="content content"
   >
     <div
-      class="iconWrapper"
-    >
-      <img
-        alt=""
-        class="icon"
-        data-test-id="inform-container-icon"
-        src="not-found.svg"
-      />
-    </div>
-    <div
       class="header"
     >
       Что-то пошло не так
@@ -26,7 +16,7 @@ exports[`CommonError should render 1`] = `
       class="buttonBlock"
     >
       <button
-        class="btn btnScaled btn-green btn-contained btn-x-large btnSkeuomorph button"
+        class="btn btn-green btn-contained btn-x-large btnSkeuomorph button"
         data-test-id="button-submit"
         type="button"
       >

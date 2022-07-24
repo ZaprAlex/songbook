@@ -8,16 +8,6 @@ exports[`PageAccessDenied w/o message and btn 1`] = `
     class="content content"
   >
     <div
-      class="iconWrapper"
-    >
-      <img
-        alt=""
-        class="icon"
-        data-test-id="inform-container-icon"
-        src="cat-empty.png"
-      />
-    </div>
-    <div
       class="header"
     >
       TestHeader
@@ -36,16 +26,6 @@ exports[`PageAccessDenied with message and button 1`] = `
   <div
     class="content content"
   >
-    <div
-      class="iconWrapper"
-    >
-      <img
-        alt=""
-        class="icon"
-        data-test-id="inform-container-icon"
-        src="cat-empty.png"
-      />
-    </div>
     <div
       class="header"
     >

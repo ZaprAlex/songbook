@@ -9,7 +9,6 @@ import { IInformContainer } from './types';
 import styles from './InformContainer.module.css';
 
 const InformContainer: React.FC<IInformContainer> = ({
-    icon,
     header,
     headerClassName,
     message,
@@ -30,9 +29,6 @@ const InformContainer: React.FC<IInformContainer> = ({
 
     return (
         <div className={cn(styles.content, contentClassName)}>
-            <div className={styles.iconWrapper}>
-                <img src={icon} alt="" className={styles.icon} data-test-id="inform-container-icon" />
-            </div>
             <div className={cn(styles.header, headerClassName)}>{header}</div>
             {message && <div className={cn(styles.message, messageClassName)}>{message}</div>}
             <div className={styles.buttonBlock}>

@@ -1,0 +1,15 @@
+.page {
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column;
+    flex-grow: 1;
+    width: 100%;
+    background: #ffffff;
+
+    &.dark {
+        background: #000000;
+    }
+}

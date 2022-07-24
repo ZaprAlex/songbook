@@ -17,7 +17,6 @@ test('w/o message and btn', () => {
         contentClassName: styles.content,
     };
     const body = shallow(<InformContainer {...initialProps} />);
-    expect(body.find('img').prop('src')).toEqual('not-found.svg');
     expect(body.find('.header').text()).toEqual(testHeader);
     expect(body.html()).toMatchSnapshot();
 });
@@ -34,7 +33,6 @@ test('full functionality', () => {
         buttonClassName: styles.button,
     };
     const body = shallow(<InformContainer {...initialProps} />);
-    expect(body.find('img').prop('src')).toEqual('not-found.svg');
     expect(body.find('.header').text()).toEqual(testHeader);
     expect(body.find('.message').text()).toEqual(testMessage);
     const submitButton = body.find('.button');

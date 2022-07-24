@@ -17,15 +17,11 @@ exports[`BackButton  Is func match snapshot 1`] = `
       onClick={[Function]}
       type="button"
     >
-      <span
+      <img
+        alt=""
         className="btnIcon"
-      >
-        <WhiteSvgLogo
-          url="arrow-left-black.svg"
-        >
-          <svg />
-        </WhiteSvgLogo>
-      </span>
+        src="arrow-left-black.svg"
+      />
       <span
         className="buttonLabel"
       >

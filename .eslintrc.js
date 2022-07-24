@@ -28,7 +28,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  /*      0 = off     1 = warn        2 = error     */
+  /*      0 = off     1 = warn        2 = MainPage     */
   /**
    * Set up hot keys for EsLint:
    * https://stackoverflow.com/questions/41735890/how-to-make-webstorm-format-code-according-to-eslint

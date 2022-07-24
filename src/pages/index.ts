@@ -1,1 +1,1 @@
-export { default } from './SongsPageRouter';
+export { default } from '../containers/SongsPageRouter';

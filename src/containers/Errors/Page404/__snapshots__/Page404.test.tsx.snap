@@ -8,16 +8,6 @@ exports[`Page404 should render 1`] = `
     class="content content"
   >
     <div
-      class="iconWrapper"
-    >
-      <img
-        alt=""
-        class="icon"
-        data-test-id="inform-container-icon"
-        src="cat-empty.png"
-      />
-    </div>
-    <div
       class="header"
     >
       Страница не найдена

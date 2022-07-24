@@ -104,9 +104,9 @@ module.exports = function (proxy, allowedHost) {
         before(app, server) {
             // Keep `evalSourceMapMiddleware` and `errorOverlayMiddleware`
             // middlewares before `redirectServedPath` otherwise will not have any effect
-            // This lets us fetch source contents from webpack for the error overlay
+            // This lets us fetch source contents from webpack for the MainPage overlay
             app.use(evalSourceMapMiddleware(server));
-            // This lets us open files from the runtime error overlay.
+            // This lets us open files from the runtime MainPage overlay.
             app.use(errorOverlayMiddleware());
 
             if (fs.existsSync(paths.proxySetup)) {

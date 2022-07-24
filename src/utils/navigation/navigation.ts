@@ -16,4 +16,5 @@ export const goToCommonError = (history: History, state?: stateLocationType) => 
     history.push(ERROR_ROUTE.COMMON, state);
 };
 
-export const getNavFunc = (history: History, path: string) => (state?: stateLocationType) => history.push(path, state);
+export const getNavFunc = (history: History, path: string) => (state?: stateLocationType) =>
+    history.push(path, state);

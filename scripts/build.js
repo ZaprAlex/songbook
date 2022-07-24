@@ -72,7 +72,11 @@ checkBrowsers(paths.appPath, isInteractive)
                         chalk.underline(chalk.yellow('keywords')) +
                         ' to learn more about each warning.'
                 );
-                console.log('To ignore, add ' + chalk.cyan('// eslint-disable-next-line') + ' to the line before.\n');
+                console.log(
+                    'To ignore, add ' +
+                        chalk.cyan('// eslint-disable-next-line') +
+                        ' to the line before.\n'
+                );
             } else {
                 console.log(chalk.green('Compiled successfully.\n'));
             }
@@ -145,7 +149,8 @@ function build(previousFileSizes) {
 
                 // Add additional information for postcss errors
                 if (Object.prototype.hasOwnProperty.call(err, 'postcssNode')) {
-                    errMessage += '\nCompileError: Begins at CSS selector ' + err['postcssNode'].selector;
+                    errMessage +=
+                        '\nCompileError: Begins at CSS selector ' + err['postcssNode'].selector;
                 }
 
                 messages = formatWebpackMessages({
@@ -153,10 +158,12 @@ function build(previousFileSizes) {
                     warnings: [],
                 });
             } else {
-                messages = formatWebpackMessages(stats.toJson({ all: false, warnings: true, errors: true }));
+                messages = formatWebpackMessages(
+                    stats.toJson({ all: false, warnings: true, errors: true })
+                );
             }
             if (messages.errors.length) {
-                // Only keep the first error. Others are often indicative
+                // Only keep the first MainPage. Others are often indicative
                 // of the same problem, but confuse the reader with noise.
                 if (messages.errors.length > 1) {
                     messages.errors.length = 1;

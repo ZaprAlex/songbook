@@ -1,7 +1,7 @@
 import { IButton } from '../Button';
 
 export interface IInformContainer {
-    icon: string;
+    icon?: string;
     header: string;
     headerClassName?: string;
     message?: string;

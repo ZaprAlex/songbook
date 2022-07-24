@@ -13,9 +13,9 @@ describe('Page404', () => {
         jest.restoreAllMocks();
     });
 
-    const goToProducts = jest.fn();
+    const goToSongs = jest.fn();
 
-    (useAppNavigation as jest.Mock).mockReturnValue({ goToProducts });
+    (useAppNavigation as jest.Mock).mockReturnValue({ goToSongs });
 
     test('should render', async () => {
         const { container } = render(<Page404 />);
@@ -24,6 +24,6 @@ describe('Page404', () => {
 
         fireEvent.click(screen.getByRole('button'));
 
-        expect(goToProducts).toHaveBeenCalled();
+        expect(goToSongs).toHaveBeenCalled();
     });
 });

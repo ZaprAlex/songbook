@@ -2,7 +2,7 @@ export const ROUTE = {
     CORE: '/',
     SONGS: '/songs',
     CHORDS: '/chords',
-    ERROR: '/error',
+    ERROR: '/MainPage',
 };
 
 const { ERROR } = ROUTE;

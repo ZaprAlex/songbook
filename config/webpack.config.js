@@ -137,7 +137,7 @@ module.exports = function (webpackEnv) {
             // connect to WebpackDevServer by a socket and get notified about changes.
             // When you save a file, the client will either apply hot updates (in case
             // of CSS changes), or refresh the page (in case of JS changes). When you
-            // make a syntax error, this client will display a syntax error overlay.
+            // make a syntax MainPage, this client will display a syntax MainPage overlay.
             // Note: instead of the default WebpackDevServer client, we use a custom one
             // to bring better experience for Create React App users. You can replace
             // the line below with these two lines if you prefer the stock client:
@@ -146,7 +146,7 @@ module.exports = function (webpackEnv) {
             isEnvDevelopment && require.resolve('react-dev-utils/webpackHotDevClient'),
             // Finally, this is your app's code:
             paths.appIndexJs,
-            // We include the app code last so that if there is a runtime error during
+            // We include the app code last so that if there is a runtime MainPage during
             // initialization, it doesn't blow up the WebpackDevServer client, and
             // changing JS code would still trigger a refresh.
         ].filter(Boolean),
@@ -172,8 +172,10 @@ module.exports = function (webpackEnv) {
             publicPath: paths.publicUrlOrPath,
             // Point sourcemap entries to original disk location (format as URL on Windows)
             devtoolModuleFilenameTemplate: isEnvProduction
-                ? (info) => path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/')
-                : isEnvDevelopment && ((info) => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')),
+                ? (info) =>
+                      path.relative(paths.appSrc, info.absoluteResourcePath).replace(/\\/g, '/')
+                : isEnvDevelopment &&
+                  ((info) => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')),
             // Prevents conflicts when multiple webpack runtimes (from different apps)
             // are used on the same page.
             jsonpFunction: `webpackJsonp${appPackageJson.name}`,
@@ -264,7 +266,9 @@ module.exports = function (webpackEnv) {
             // We placed these paths second because we want `node_modules` to "win"
             // if there are any conflicts. This matches Node resolution mechanism.
             // https://github.com/facebook/create-react-app/issues/253
-            modules: ['node_modules', paths.appNodeModules].concat(modules.additionalModulePaths || []),
+            modules: ['node_modules', paths.appNodeModules].concat(
+                modules.additionalModulePaths || []
+            ),
             // These are the reasonable defaults supported by the Node ecosystem.
             // We also include JSX as a common component filename extension to support
             // some tools, although we do not recommend using it, see:
@@ -355,7 +359,9 @@ module.exports = function (webpackEnv) {
                             include: paths.appSrc,
                             loader: require.resolve('babel-loader'),
                             options: {
-                                customize: require.resolve('babel-preset-react-app/webpack-overrides'),
+                                customize: require.resolve(
+                                    'babel-preset-react-app/webpack-overrides'
+                                ),
 
                                 plugins: [
                                     [
@@ -363,7 +369,8 @@ module.exports = function (webpackEnv) {
                                         {
                                             loaderMap: {
                                                 svg: {
-                                                    ReactComponent: '@svgr/webpack?-svgo,+titleProp,+ref![path]',
+                                                    ReactComponent:
+                                                        '@svgr/webpack?-svgo,+titleProp,+ref![path]',
                                                 },
                                             },
                                         },
@@ -388,7 +395,12 @@ module.exports = function (webpackEnv) {
                                 babelrc: false,
                                 configFile: false,
                                 compact: false,
-                                presets: [[require.resolve('babel-preset-react-app/dependencies'), { helpers: true }]],
+                                presets: [
+                                    [
+                                        require.resolve('babel-preset-react-app/dependencies'),
+                                        { helpers: true },
+                                    ],
+                                ],
                                 cacheDirectory: true,
                                 // See #6846 for context on why cacheCompression is disabled
                                 cacheCompression: false,
@@ -416,7 +428,7 @@ module.exports = function (webpackEnv) {
                             }),
                             // Don't consider CSS imports dead code even if the
                             // containing package claims to have no side effects.
-                            // Remove this when webpack adds a warning or an error for this.
+                            // Remove this when webpack adds a warning or an MainPage for this.
                             // See https://github.com/webpack/webpack/issues/6571
                             sideEffects: true,
                         },
@@ -448,7 +460,7 @@ module.exports = function (webpackEnv) {
                             ),
                             // Don't consider CSS imports dead code even if the
                             // containing package claims to have no side effects.
-                            // Remove this when webpack adds a warning or an error for this.
+                            // Remove this when webpack adds a warning or an MainPage for this.
                             // See https://github.com/webpack/webpack/issues/6571
                             sideEffects: true,
                         },
@@ -541,7 +553,7 @@ module.exports = function (webpackEnv) {
             // This is necessary to emit hot updates (currently CSS only):
             isEnvDevelopment && new webpack.HotModuleReplacementPlugin(),
             // Watcher doesn't work well if you mistype casing in a path so we use
-            // a plugin that prints an error when you attempt to do this.
+            // a plugin that prints an MainPage when you attempt to do this.
             // See https://github.com/facebook/create-react-app/issues/240
             isEnvDevelopment && new CaseSensitivePathsPlugin(),
             // If you require a missing module and then `npm install` it, you still have
@@ -570,7 +582,9 @@ module.exports = function (webpackEnv) {
                         manifest[file.name] = file.path;
                         return manifest;
                     }, seed);
-                    const entrypointFiles = entrypoints.main.filter((fileName) => !fileName.endsWith('.map'));
+                    const entrypointFiles = entrypoints.main.filter(
+                        (fileName) => !fileName.endsWith('.map')
+                    );
 
                     return {
                         files: manifestFiles,
@@ -611,8 +625,12 @@ module.exports = function (webpackEnv) {
                     async: isEnvDevelopment,
                     useTypescriptIncrementalApi: true,
                     checkSyntacticErrors: true,
-                    resolveModuleNameModule: process.versions.pnp ? `${__dirname}/pnpTs.js` : undefined,
-                    resolveTypeReferenceDirectiveModule: process.versions.pnp ? `${__dirname}/pnpTs.js` : undefined,
+                    resolveModuleNameModule: process.versions.pnp
+                        ? `${__dirname}/pnpTs.js`
+                        : undefined,
+                    resolveTypeReferenceDirectiveModule: process.versions.pnp
+                        ? `${__dirname}/pnpTs.js`
+                        : undefined,
                     tsconfig: paths.appTsConfig,
                     reportFiles: [
                         '**',

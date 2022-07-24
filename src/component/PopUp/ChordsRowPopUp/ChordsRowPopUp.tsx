@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext } from 'react';
 
 import { CLOSE_MODAL_ACTION, ModalCtx } from '../../../reducer/modal';
 import { Chords } from '../../../constants/chords';
