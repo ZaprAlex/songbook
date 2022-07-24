@@ -1,4 +1,10 @@
-export function getPluralWord(word: string, number: number, one: string, two: string, five: string) {
+export function getPluralWord(
+    word: string,
+    number: number,
+    one: string,
+    two: string,
+    five: string
+) {
     let suffix = '';
     number %= 100;
     if (number >= 5 && number <= 20) {
