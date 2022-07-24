@@ -1,3 +1,8 @@
+// TODO: оригинальная регулярка отлавливала в тексте 'FM', нужно добавить еще Cadd9
+// const CHORD_REGEX_PATTERN = /\b[A-G][b#]?(maj|min|m|M|\+|-|dim|aug)?\d*(sus)?\d*(\/[A-G][b#]?)?\b/g;
+export const CHORD_REGEX_PATTERN =
+    /\b[A-G][b#]?(maj|min|m|\+|-|dim|aug)?\d*(sus)?\d*(\/[A-G][b#]?)?\b/g;
+
 export interface IChord {
     chord: string;
     name: string;
@@ -94,3 +99,5 @@ export const Chords: Record<string, IChord> = ChordsList.reduce<any>((chords, ch
     chords[chordItem.chord] = chordItem;
     return chords;
 }, {});
+
+export const ChordsKeys = Object.keys(Chords);

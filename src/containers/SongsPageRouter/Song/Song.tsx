@@ -1,11 +1,12 @@
-import React, { FC, useCallback, useContext, useEffect, useMemo, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import React, { FC, useCallback, useContext, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import cn from 'classnames';
 
 import { ModalCtx, OPEN_CHORDS_ROW_MODAL_ACTION } from '../../../reducer/modal';
 import { useInterval } from '../../../hooks/useInterval';
 import { useTheme } from '../../../hooks/useTheme';
 import { scrollToTop } from '../../../utils/helper';
+import { CHORD_REGEX_PATTERN, ChordsKeys } from '../../../constants/chords';
 import { ROUTE } from '../../../constants/route';
 import { Themes } from '../../../constants/Themes';
 import { ISong } from '../../../constants/SongsData';
@@ -94,11 +95,15 @@ const Song: FC<SongProps> = ({ author, song: { name, lyrics, speed: defaultSpeed
     }
 
     function onChordClick(chordsRow: string) {
-        const words = new Set(chordsRow.split(' '));
-        words.delete('');
+        const chords = Array.from(
+            new Set(chordsRow.split(/\b/).filter((word) => word.match(CHORD_REGEX_PATTERN)))
+        ).filter((chord) => ChordsKeys.includes(chord));
         dispatch({
             type: OPEN_CHORDS_ROW_MODAL_ACTION,
-            payload: { modalType: ModalTypes.CHORDS_ROW_MODAL, chordsRow: Array.from(words) },
+            payload: {
+                modalType: ModalTypes.CHORDS_ROW_MODAL,
+                chordsRow: chords,
+            },
         });
     }
 

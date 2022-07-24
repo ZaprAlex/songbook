@@ -1,8 +1,5 @@
 import { ISong, SongsData } from '../constants/SongsData';
-
-// TODO: оригинальная регулярка отлавливала в тексте 'FM'
-// const CHORD_REGEX_PATTERN = /\b[A-G][b#]?(maj|min|m|M|\+|-|dim|aug)?\d*(sus)?\d*(\/[A-G][b#]?)?\b/g;
-const CHORD_REGEX_PATTERN = /\b[A-G][b#]?(maj|min|m|\+|-|dim|aug)?\d*(sus)?\d*(\/[A-G][b#]?)?\b/g;
+import { CHORD_REGEX_PATTERN } from '../constants/chords';
 
 export function isChordsRow(line: string): boolean[] {
     if (line.length) {
