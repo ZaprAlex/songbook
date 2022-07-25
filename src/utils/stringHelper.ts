@@ -1,3 +1,5 @@
+import { CHORD_REGEX_PATTERN, ChordsKeys } from '../constants/chords';
+
 export function getPluralWord(
     word: string,
     number: number,
@@ -26,4 +28,18 @@ export function getPluralWord(
 
 export function getCorrectString(text?: string) {
     return text ? text.replaceAll(' ₽', ' ₽') : text;
+}
+
+export function getChordsFromString(line: string) {
+    return Array.from(
+        new Set(line.split(/\b/).filter((word) => word.match(CHORD_REGEX_PATTERN)))
+    ).filter((chord) => ChordsKeys.includes(chord));
+}
+
+export function encodeChord(chord: string) {
+    return chord.replaceAll('#', '_').replaceAll('/', '-');
+}
+
+export function decodeChord(chord: string) {
+    return chord.replaceAll('_', '#').replaceAll('-', '/');
 }

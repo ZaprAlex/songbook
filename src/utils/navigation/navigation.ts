@@ -2,19 +2,16 @@ import { History } from 'history';
 
 import { ERROR_ROUTE } from '../../constants/route';
 
-import { stateLocationType } from './types';
-
-export const goTo404 = (history: History, state?: stateLocationType) => {
-    history.push(ERROR_ROUTE._404, state);
+export const goTo404 = (history: History) => {
+    history.push(ERROR_ROUTE._404);
 };
 
-export const goTo500 = (history: History, state?: stateLocationType) => {
-    history.push(ERROR_ROUTE._500, state);
+export const goTo500 = (history: History) => {
+    history.push(ERROR_ROUTE._500);
 };
 
-export const goToCommonError = (history: History, state?: stateLocationType) => {
-    history.push(ERROR_ROUTE.COMMON, state);
+export const goToCommonError = (history: History) => {
+    history.push(ERROR_ROUTE.COMMON);
 };
 
-export const getNavFunc = (history: History, path: string) => (state?: stateLocationType) =>
-    history.push(path, state);
+export const getNavFunc = (history: History, path: string) => () => history.push(path);

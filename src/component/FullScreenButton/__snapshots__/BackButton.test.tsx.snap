@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackButton  Is func match snapshot 1`] = `
+<BackButton>
+  <Button
+    dataTestId="back-button"
+    icon="arrow-left-black.svg"
+    label="Назад"
+    onClick={[Function]}
+    size="small"
+    type="outline"
+  >
+    <button
+      className="btn btn-icon-left btn-outline btn-small"
+      data-test-id="back-button"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      <img
+        alt=""
+        className="btnIcon"
+        src="arrow-left-black.svg"
+      />
+      <span
+        className="buttonLabel"
+      >
+        Назад
+      </span>
+    </button>
+  </Button>
+</BackButton>
+`;

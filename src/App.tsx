@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 
 import ContextContainer from './containers/ContextContainer';
 import MainPage from './pages/MainPage';
-import PopUp from './component/PopUp';
 import { NavigationProvider } from './component/Navigation';
 import ThemeContextContainer from './containers/ThemeContextContainer';
 
@@ -14,7 +13,6 @@ const App: FC = () => (
             <NavigationProvider>
                 <div className={styles.app}>
                     <MainPage />
-                    <PopUp />
                 </div>
             </NavigationProvider>
         </ContextContainer>

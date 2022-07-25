@@ -6,6 +6,7 @@ import { ROUTE } from '../../constants/route';
 import { Themes } from '../../constants/Themes';
 import { useTheme } from '../../hooks/useTheme';
 import ErrorPage from '../ErrorPage';
+import ChordsPageRouter from '../../containers/ChordsPageRouter';
 import MainHeader from '../../containers/MainHeader';
 import SongsPageRouter from '../../containers/SongsPageRouter';
 
@@ -19,6 +20,7 @@ const MainPage: FC = () => {
             <MainHeader />
             <Switch>
                 <Route path={ROUTE.SONGS} render={() => <SongsPageRouter />} />
+                <Route path={ROUTE.CHORDS} render={() => <ChordsPageRouter />} />
                 <Route path={ROUTE.ERROR} component={ErrorPage} />
                 <Redirect to={ROUTE.SONGS} />
             </Switch>

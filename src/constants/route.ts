@@ -2,18 +2,10 @@ export const ROUTE = {
     CORE: '/',
     SONGS: '/songs',
     CHORDS: '/chords',
-    ERROR: '/MainPage',
+    ERROR: '/error',
 };
 
 const { ERROR } = ROUTE;
-//
-// export const PAGES = {
-//     SONGS: 'songs',
-//     CHORDS: 'chords',
-//     PROFILE: 'profile',
-//     SETTINGS: 'settings',
-//     STATISTICS: 'statistics',
-// };
 
 export const ERROR_ROUTE = {
     _404: `${ERROR}/404`,

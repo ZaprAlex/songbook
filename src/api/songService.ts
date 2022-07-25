@@ -1,10 +1,10 @@
 import { ISong, SongsData } from '../constants/SongsData';
 import { CHORD_REGEX_PATTERN } from '../constants/chords';
 
-export function isChordsRow(line: string): boolean[] {
+export function isChordsRow(line: string): string[] {
     if (line.length) {
         const pattern = new RegExp(CHORD_REGEX_PATTERN);
-        return line.match(pattern) ? [true] : [];
+        return line.match(pattern) ? ['chords_row'] : [];
     }
     return [];
 }

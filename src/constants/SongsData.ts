@@ -1,6 +1,6 @@
 import songsJsonData from './songs.json';
 
-type ISongRow = (string | boolean)[];
+type ISongRow = string[];
 
 export interface ISong {
     name: string;

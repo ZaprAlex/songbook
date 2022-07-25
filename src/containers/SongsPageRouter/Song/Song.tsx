@@ -1,25 +1,28 @@
-import React, { FC, useCallback, useContext, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import cn from 'classnames';
 
-import { ModalCtx, OPEN_CHORDS_ROW_MODAL_ACTION } from '../../../reducer/modal';
 import { useInterval } from '../../../hooks/useInterval';
 import { useTheme } from '../../../hooks/useTheme';
+import { getChordsFromString } from '../../../utils/stringHelper';
 import { scrollToTop } from '../../../utils/helper';
-import { CHORD_REGEX_PATTERN, ChordsKeys } from '../../../constants/chords';
 import { ROUTE } from '../../../constants/route';
 import { Themes } from '../../../constants/Themes';
 import { ISong } from '../../../constants/SongsData';
-import ModalTypes from '../../../constants/ModalTypes';
 import Button from '../../../component/Button';
-import expandFullscreen from '../../../static/svgs/expand-fullscreen.svg';
-import exitFullscreen from '../../../static/svgs/exit-fullscreen.svg';
+import ChordsRowPopUp from '../../../component/ChordsRowPopUp';
 
 import styles from './Song.module.scss';
+import FullScreenButton from '../../../component/FullScreenButton';
 
 type SongProps = {
     author: string;
     song: ISong;
+};
+
+type ChordsModalState = {
+    activeRowChords?: string[];
+    isModalOpen?: boolean;
 };
 
 const { DARK } = Themes;
@@ -29,17 +32,24 @@ const TIMEOUT = 5;
 
 const Song: FC<SongProps> = ({ author, song: { name, lyrics, speed: defaultSpeed = 0 } }) => {
     const history = useHistory();
-    const { dispatch } = useContext(ModalCtx);
     const { theme } = useTheme();
     const [speed, setSpeed] = useState<number>(0);
-    const [fullScreenBtnIcon, setFullScreenBtnIcon] = useState<string>(expandFullscreen);
     const [scrollBtnLabel, setScrollBtnLabel] = useState<string>('!');
     const [scrollable, setScrollable] = useState<boolean>(false);
+    const [{ isModalOpen, activeRowChords }, setIsModalState] = useState<ChordsModalState>({});
     const [time, setTime] = useState<number>(-1);
+    const [chords, setChords] = useState<string[]>([]);
 
     useEffect(() => {
         scrollToTop();
         setSpeed(defaultSpeed);
+        let allChords = new Set<string>();
+        lyrics.forEach(([line, isChordsRow]) => {
+            if (isChordsRow) {
+                allChords = new Set([...Array.from(allChords), ...getChordsFromString(line)]);
+            }
+        });
+        setChords(Array.from(allChords));
     }, []);
 
     useEffect(() => {
@@ -78,34 +88,16 @@ const Song: FC<SongProps> = ({ author, song: { name, lyrics, speed: defaultSpeed
 
     const onAuthorClick = () => history.push(`${ROUTE.SONGS}/${author}`);
 
-    async function toggleFullScreen() {
-        if (!document.fullscreenElement) {
-            await document.documentElement.requestFullscreen();
-            setFullScreenBtnIcon(exitFullscreen);
-        } else {
-            if (document.exitFullscreen) {
-                await document.exitFullscreen();
-                setFullScreenBtnIcon(expandFullscreen);
-            }
-        }
-    }
-
     function withThemeClassName(className: string) {
         return cn(className, { [styles.dark]: theme === DARK });
     }
 
     function onChordClick(chordsRow: string) {
-        const chords = Array.from(
-            new Set(chordsRow.split(/\b/).filter((word) => word.match(CHORD_REGEX_PATTERN)))
-        ).filter((chord) => ChordsKeys.includes(chord));
-        dispatch({
-            type: OPEN_CHORDS_ROW_MODAL_ACTION,
-            payload: {
-                modalType: ModalTypes.CHORDS_ROW_MODAL,
-                chordsRow: chords,
-            },
-        });
+        const chords = getChordsFromString(chordsRow);
+        setIsModalState({ isModalOpen: true, activeRowChords: chords });
     }
+
+    const onCloseModal = useCallback(() => setIsModalState({}), []);
 
     return (
         <>
@@ -159,8 +151,13 @@ const Song: FC<SongProps> = ({ author, song: { name, lyrics, speed: defaultSpeed
                     size="small"
                     className={scrollable ? styles.active : ''}
                 />
-                <Button icon={fullScreenBtnIcon} onClick={toggleFullScreen} size="small" />
+                <FullScreenButton />
             </div>
+            <ChordsRowPopUp
+                isOpen={isModalOpen}
+                chords={activeRowChords ?? chords}
+                onClose={onCloseModal}
+            />
         </>
     );
 };
