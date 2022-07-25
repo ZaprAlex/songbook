@@ -2,6 +2,7 @@
  * Оригинальная регулярка:
  * /\b[A-G][b#]?(maj|min|m|M|\+|-|dim|aug)?\d*(sus)?\d*(\/[A-G][b#]?)?\b/g
  * Убран блок 'M' (так как в оригинальной отлавливалось в тексте 'FM') и добавлен блок для определения Cadd9
+ * Как не отлавливать артикль и форму глагола to be ("Am I")?
  */
 export const CHORD_REGEX_PATTERN =
     /\b[A-H][b#]?(maj|min|m|\+|-|dim|aug|add)?\d*(sus)?\d*(\/[A-G][b#]?)?\b/g;
@@ -124,8 +125,60 @@ export const ChordsList: IChordsList = {
         { chord: 'C#9', name: 'Мажорный нонаккорд от ноты До-диез', src: 'C_9.png' },
         { chord: 'C#m9', name: 'Минорный нонаккорд от ноты До-диез', src: 'C_m9.png' },
     ],
-    D: [{ chord: 'Dm', name: 'Ре минор', src: 'Dm.png' }],
-    E: [],
+    D: [
+        { chord: 'D', name: 'Ре мажор', src: 'D.png' },
+        { chord: 'Dm', name: 'Ре минор', src: 'Dm.png' },
+        { chord: 'D+', name: 'Ре мажор увеличенный', src: 'D+.png' },
+        { chord: 'D#', name: 'Ре-диез мажор', src: 'D_.png' },
+        { chord: 'D#m', name: 'Ре-диез минор', src: 'D_m.png' },
+        { chord: 'D#+', name: 'Ре-диез мажор увеличенный', src: 'D_+.png' },
+        { chord: 'Dmaj7', name: 'Большой мажорный септаккорд от ноты Ре', src: 'Dmaj7.png' },
+        { chord: 'D#maj7', name: 'Большой мажорный септаккорд от ноты Ре-диез', src: 'D_maj7.png' },
+        { chord: 'Ddim', name: 'Уменьшенный аккорд от ноты Ре', src: 'Ddim.png' },
+        { chord: 'D#dim', name: 'Уменьшенный аккорд от ноты Ре-диез', src: 'D_dim.png' },
+        { chord: 'Dsus4', name: 'Ре мажор с квартой вместо терции', src: 'Dsus4.png' },
+        { chord: 'D#sus4', name: 'Ре-диез мажор с квартой вместо терции', src: 'D_sus4.png' },
+        { chord: 'D6', name: 'Мажорный секстаккорд от ноты Ре', src: 'D6.png' },
+        { chord: 'Dm6', name: 'Минорный секстаккорд от ноты Ре', src: 'Dm6.png' },
+        { chord: 'D#6', name: 'Мажорный секстаккорд от ноты Ре-диез', src: 'D_6.png' },
+        { chord: 'D#m6', name: 'Минорный секстаккорд от ноты Ре-диез', src: 'D_m6.png' },
+        { chord: 'D7', name: 'Мажорный септаккорд (Доминантсептаккорд) от ноты Ре', src: 'D7.png' },
+        { chord: 'Dm7', name: 'Минорный септаккорд от ноты Ре', src: 'Dm7.png' },
+        {
+            chord: 'D#7',
+            name: 'Мажорный септаккорд (Доминантсептаккорд) от ноты Ре-диез',
+            src: 'D_7.png',
+        },
+        { chord: 'D#m7', name: 'Минорный септаккорд от ноты Ре-диез', src: 'D_m7.png' },
+        { chord: 'Ddim7', name: 'Уменьшенный септаккорд от ноты Ре', src: 'Ddim7.png' },
+        { chord: 'D#dim7', name: 'Уменьшенный септаккорд от ноты Ре-диез', src: 'D_dim7.png' },
+        { chord: 'D7sus4', name: 'Мажорный септаккорд с квартой от ноты Ре', src: 'D7sus4.png' },
+        {
+            chord: 'D#7sus4',
+            name: 'Мажорный септаккорд с квартой от ноты Ре-диез',
+            src: 'D_7sus4.png',
+        },
+        { chord: 'D7/6', name: 'Мажорный септаккорд с секстой от ноты Ре', src: 'D7-6.png' },
+        { chord: 'D#7/6', name: 'Мажорный септаккорд с секстой от ноты Ре-диез', src: 'D_7-6.png' },
+        { chord: 'D9', name: 'Мажорный нонаккорд от ноты Ре', src: 'D9.png' },
+        { chord: 'Dm9', name: 'Минорный нонаккорд от ноты Ре', src: 'Dm9.png' },
+        { chord: 'D#9', name: 'Мажорный нонаккорд от ноты Ре-диез', src: 'D_9.png' },
+        { chord: 'D#m9', name: 'Минорный нонаккорд от ноты Ре-диез', src: 'D_m9.png' },
+    ],
+    E: [
+        { chord: 'E', name: 'Ми мажор', src: 'E.png' },
+        { chord: 'Em', name: 'Ми минор', src: 'Em.png' },
+        { chord: 'E+', name: 'Ми мажор увеличенный', src: 'E+.png' },
+        { chord: 'Emaj7', name: 'Большой мажорный септаккорд от ноты Ми', src: 'Emaj7.png' },
+        { chord: 'Edim', name: 'Уменьшенный аккорд от ноты Ми', src: 'Edim.png' },
+        { chord: 'Esus4', name: 'Ми мажор с квартой вместо терции', src: 'Esus4.png' },
+        { chord: 'E6', name: 'Мажорный секстаккорд от ноты Ми', src: 'E6.png' },
+        { chord: 'Em6', name: 'Минорный секстаккорд от ноты Ми', src: 'Em6.png' },
+        { chord: 'E7', name: 'Мажорный септаккорд (Доминантсептаккорд) от ноты Ми', src: 'E7.png' },
+        { chord: 'Em7', name: 'Минорный септаккорд от ноты Ми', src: 'Em7.png' },
+        { chord: 'Edim7', name: 'Уменьшенный септаккорд от ноты Ми', src: 'Edim7.png' },
+        { chord: 'E7sus4', name: 'Мажорный септаккорд с квартой от ноты Ми', src: 'E7sus4.png' },
+    ],
     F: [{ chord: 'F', name: 'Фа мажор', src: 'F.png' }],
     G: [
         { chord: 'Gm', name: 'Соль минор', src: 'Gm.png' },
