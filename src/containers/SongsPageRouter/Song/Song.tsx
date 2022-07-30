@@ -11,9 +11,10 @@ import { Themes } from '../../../constants/Themes';
 import { ISong } from '../../../constants/SongsData';
 import Button from '../../../component/Button';
 import ChordsRowPopUp from '../../../component/ChordsRowPopUp';
+import FullScreenButton from '../../../component/FullScreenButton';
+import arrowUp from '../../../static/svgs/arrow-up.svg';
 
 import styles from './Song.module.scss';
-import FullScreenButton from '../../../component/FullScreenButton';
 
 type SongProps = {
     author: string;
@@ -26,7 +27,7 @@ type ChordsModalState = {
 };
 
 const { DARK } = Themes;
-const DEFAULT_SPEED = 60;
+const DEFAULT_SPEED = 70;
 const SPEED_DELTA = 10;
 const TIMEOUT = 5;
 
@@ -70,6 +71,11 @@ const Song: FC<SongProps> = ({ author, song: { name, lyrics, speed: defaultSpeed
         () => scrollable && window.scrollBy({ top: 0.5, behavior: 'smooth' }),
         [scrollable]
     );
+
+    const onScrollToTopClick = useCallback(() => {
+        setScrollable(false);
+        scrollToTop();
+    }, []);
 
     useInterval(autoscroll, DEFAULT_SPEED - speed * SPEED_DELTA);
 
@@ -151,6 +157,7 @@ const Song: FC<SongProps> = ({ author, song: { name, lyrics, speed: defaultSpeed
                     size="small"
                     className={scrollable ? styles.active : ''}
                 />
+                <Button onClick={onScrollToTopClick} size="small" icon={arrowUp} />
                 <FullScreenButton />
             </div>
             <ChordsRowPopUp
