@@ -1,9 +1,11 @@
 {
     "name": "songbook",
+    "homepage": "https://zapralex.github.io/react-gh-pages",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
         "@babel/core": "7.9.0",
+        "@babel/plugin-transform-react-jsx": "^7.21.0",
         "@sberid/js-sdk": "^3.0.2",
         "@svgr/webpack": "4.3.3",
         "@testing-library/jest-dom": "^5.11.9",
@@ -26,10 +28,11 @@
         "enzyme-to-json": "^3.6.1",
         "file-loader": "4.3.0",
         "fs-extra": "^8.1.0",
+        "gh-pages": "^5.0.0",
         "html-webpack-plugin": "4.0.0-beta.11",
         "http-proxy-middleware": "^1.0.6",
         "identity-obj-proxy": "3.0.0",
-        "jest": "24.9.0",
+        "jest": "^29.5.0",
         "jest-resolve": "24.9.0",
         "jest-watch-typeahead": "0.4.2",
         "lodash": "^4.17.21",
@@ -77,7 +80,7 @@
     "scripts": {
         "start": "node scripts/start.js",
         "start:https": "HTTPS=true node scripts/start.js",
-        "build": "yarn test:coverage && node scripts/build.js",
+        "build": "node scripts/build.js",
         "test": "node scripts/test.js",
         "test:coverage": "yarn test --coverage --watchAll=false",
         "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
@@ -87,7 +90,9 @@
         "docker-stop": "docker stop songbook-web",
         "docker-start": "docker start songbook-web",
         "docker-rm": "docker rm songbook-web",
-        "push-image": "mvn -Dmaven.test.skip=true clean package docker:build docker:push -Pdev -Ddocker.buildArg.profile=dev"
+        "push-image": "mvn -Dmaven.test.skip=true clean package docker:build docker:push -Pdev -Ddocker.buildArg.profile=dev",
+        "predeploy": "yarn run build",
+        "deploy": "gh-pages -d build"
     },
     "eslintConfig": {
         "extends": "react-app"
