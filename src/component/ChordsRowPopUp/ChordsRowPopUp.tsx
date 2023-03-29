@@ -4,6 +4,7 @@ import cn from 'classnames';
 
 import { Chords } from '../../constants/chords';
 import { noop } from '../../utils/helper';
+import ChordItem from '../ChordItem';
 
 import styles from './ChordsRowPopUp.module.scss';
 
@@ -36,6 +37,7 @@ const ChordsRowPopUp: React.FC<ChordsRowPopUp> = ({
                                 src={`/chords/${value.charAt(0)}/${Chords[value].src}`}
                                 alt={value}
                             />
+                            <ChordItem />
                         </div>
                     ))}
                 </div>

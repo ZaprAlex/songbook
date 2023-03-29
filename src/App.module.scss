@@ -4,4 +4,9 @@
     min-height: 100%;
     min-width: 320px;
     display: flex;
+    background: rgba(0, 0, 0, 0.16);
+
+    &.dark {
+        background: rgba(0, 0, 0, 0.92);
+    }
 }

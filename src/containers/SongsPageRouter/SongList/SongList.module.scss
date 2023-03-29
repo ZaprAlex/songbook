@@ -13,13 +13,14 @@
     flex-flow: row wrap;
     align-items: center;
     width: fit-content;
-    //height: calc(100vh - 10%);
     margin: 0 auto;
     padding: 0 50px 20px;
     gap: 32px;
+    column-count: 3;
 
     & > .text {
         color: mediumblue;
+        cursor: pointer;
 
         &.dark {
             color: deepskyblue;

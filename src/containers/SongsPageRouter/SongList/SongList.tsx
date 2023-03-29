@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import cn from 'classnames';
 
@@ -10,6 +10,7 @@ import { Themes } from '../../../constants/Themes';
 
 import styles from './SongList.module.scss';
 import { useAppNavigation } from '../../../component/Navigation';
+import AuthorsAlphabetPanel from '../../../component/AuthorsAlphabetPanel';
 
 type Params = {
     author?: string;
@@ -21,6 +22,7 @@ const SongList: FC = () => {
     const { author = '' } = useParams<Params>();
     const { goToSongs } = useAppNavigation();
     const hasAuthor = !!SongsData[author];
+    const [filteredAuthors, setFilteredAuthors] = useState<string[]>(Object.keys(SongsData));
 
     if (author.length && !hasAuthor) {
         goToSongs();
@@ -40,12 +42,17 @@ const SongList: FC = () => {
         history.push(`${ROUTE.SONGS}/${author}/${name}`);
     }
 
+    function onSignClick(sign: string) {
+        setFilteredAuthors(Object.keys(SongsData).filter((author) => author.startsWith(sign)));
+    }
+
     function onAuthorClick(value: string) {
         history.push(`${ROUTE.SONGS}/${value}`);
     }
 
     return (
         <>
+            <AuthorsAlphabetPanel onClick={onSignClick} />
             {hasAuthor && <p className={withThemeClassName(styles.header)}>{author}</p>}
             <div className={styles.content}>
                 {hasAuthor
@@ -58,7 +65,7 @@ const SongList: FC = () => {
                               {name}
                           </div>
                       ))
-                    : Object.keys(SongsData).map((value, index) => (
+                    : filteredAuthors.map((value, index) => (
                           <div
                               key={`song-${index}`}
                               onClick={() => onAuthorClick(value)}

@@ -1,5 +1,5 @@
-export function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+export function scrollToTop(smooth?: boolean) {
+    window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
 }
 
 export const ieDetector = () => navigator.userAgent.includes('.NET');

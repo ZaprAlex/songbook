@@ -120,7 +120,7 @@ const Song: FC<SongProps> = ({ author, song: { name, lyrics, speed: defaultSpeed
                             <p
                                 key={`row-${index}`}
                                 className={withThemeClassName(cn(styles.row, styles.chord))}
-                                onClick={() => onChordClick(String(text))}
+                                // onClick={() => onChordClick(String(text))}
                             >
                                 {text}
                             </p>
@@ -132,33 +132,37 @@ const Song: FC<SongProps> = ({ author, song: { name, lyrics, speed: defaultSpeed
                     )}
                 </div>
             </div>
-            <div className={styles.buttonsBlock}>
-                {scrollable && (
-                    <>
+            <div className={styles.buttonsBlockWrapper}>
+                <div className={styles.buttonsBlock}>
+                    <div className={styles.buttonsBlockContent}>
+                        {scrollable && (
+                            <>
+                                <Button
+                                    label="-"
+                                    onClick={decreaseSpeed}
+                                    size="small"
+                                    disabled={speed <= -5}
+                                    className={styles.speed}
+                                />
+                                <Button
+                                    label="+"
+                                    onClick={increaseSpeed}
+                                    size="small"
+                                    disabled={speed >= 5}
+                                    className={styles.speed}
+                                />
+                            </>
+                        )}
                         <Button
-                            label="-"
-                            onClick={decreaseSpeed}
+                            label={scrollable ? String(speed) : scrollBtnLabel}
+                            onClick={toggleScrollable}
                             size="small"
-                            disabled={speed <= -5}
-                            className={styles.speed}
+                            className={scrollable ? styles.active : ''}
                         />
-                        <Button
-                            label="+"
-                            onClick={increaseSpeed}
-                            size="small"
-                            disabled={speed >= 5}
-                            className={styles.speed}
-                        />
-                    </>
-                )}
-                <Button
-                    label={scrollable ? String(speed) : scrollBtnLabel}
-                    onClick={toggleScrollable}
-                    size="small"
-                    className={scrollable ? styles.active : ''}
-                />
-                <Button onClick={onScrollToTopClick} size="small" icon={arrowUp} />
-                <FullScreenButton />
+                        <Button onClick={onScrollToTopClick} size="small" icon={arrowUp} />
+                        <FullScreenButton />
+                    </div>
+                </div>
             </div>
             <ChordsRowPopUp
                 isOpen={isModalOpen}

@@ -1,3 +1,1 @@
-import ChordsRowPopUp from './ChordsRowPopUp';
-
-export default ChordsRowPopUp;
+export { default } from './ChordsRowPopUp';
