@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.1f0f7284.chunk.css",
-    "main.js": "/static/js/main.ecd6bb2c.chunk.js",
-    "main.js.map": "/static/js/main.ecd6bb2c.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.aaa94570.js",
-    "runtime-main.js.map": "/static/js/runtime-main.aaa94570.js.map",
-    "static/css/2.1292276e.chunk.css": "/static/css/2.1292276e.chunk.css",
-    "static/js/2.a3249547.chunk.js": "/static/js/2.a3249547.chunk.js",
-    "static/js/2.a3249547.chunk.js.map": "/static/js/2.a3249547.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.bd9174dd0ea2f65f20e59ac63441089f.js": "/precache-manifest.bd9174dd0ea2f65f20e59ac63441089f.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.1292276e.chunk.css.map": "/static/css/2.1292276e.chunk.css.map",
-    "static/css/main.1f0f7284.chunk.css.map": "/static/css/main.1f0f7284.chunk.css.map",
-    "static/js/2.a3249547.chunk.js.LICENSE.txt": "/static/js/2.a3249547.chunk.js.LICENSE.txt",
-    "static/js/main.ecd6bb2c.chunk.js.LICENSE.txt": "/static/js/main.ecd6bb2c.chunk.js.LICENSE.txt",
-    "static/media/arrow-up.svg": "/static/media/arrow-up.4c7a261b.svg",
-    "static/media/exit-fullscreen.svg": "/static/media/exit-fullscreen.ad99d9ea.svg",
-    "static/media/expand-fullscreen.svg": "/static/media/expand-fullscreen.5756d3ff.svg",
-    "static/media/moon.svg": "/static/media/moon.78843a21.svg",
-    "static/media/sun.svg": "/static/media/sun.bc8aeaa4.svg"
+    "main.css": "/react-gh-pages/static/css/main.1f0f7284.chunk.css",
+    "main.js": "/react-gh-pages/static/js/main.ee14f07f.chunk.js",
+    "main.js.map": "/react-gh-pages/static/js/main.ee14f07f.chunk.js.map",
+    "runtime-main.js": "/react-gh-pages/static/js/runtime-main.3db2534b.js",
+    "runtime-main.js.map": "/react-gh-pages/static/js/runtime-main.3db2534b.js.map",
+    "static/css/2.1292276e.chunk.css": "/react-gh-pages/static/css/2.1292276e.chunk.css",
+    "static/js/2.a3249547.chunk.js": "/react-gh-pages/static/js/2.a3249547.chunk.js",
+    "static/js/2.a3249547.chunk.js.map": "/react-gh-pages/static/js/2.a3249547.chunk.js.map",
+    "index.html": "/react-gh-pages/index.html",
+    "precache-manifest.1ff1b6252145f311f837fbd9de38e100.js": "/react-gh-pages/precache-manifest.1ff1b6252145f311f837fbd9de38e100.js",
+    "service-worker.js": "/react-gh-pages/service-worker.js",
+    "static/css/2.1292276e.chunk.css.map": "/react-gh-pages/static/css/2.1292276e.chunk.css.map",
+    "static/css/main.1f0f7284.chunk.css.map": "/react-gh-pages/static/css/main.1f0f7284.chunk.css.map",
+    "static/js/2.a3249547.chunk.js.LICENSE.txt": "/react-gh-pages/static/js/2.a3249547.chunk.js.LICENSE.txt",
+    "static/js/main.ee14f07f.chunk.js.LICENSE.txt": "/react-gh-pages/static/js/main.ee14f07f.chunk.js.LICENSE.txt",
+    "static/media/arrow-up.svg": "/react-gh-pages/static/media/arrow-up.4c7a261b.svg",
+    "static/media/exit-fullscreen.svg": "/react-gh-pages/static/media/exit-fullscreen.ad99d9ea.svg",
+    "static/media/expand-fullscreen.svg": "/react-gh-pages/static/media/expand-fullscreen.5756d3ff.svg",
+    "static/media/moon.svg": "/react-gh-pages/static/media/moon.78843a21.svg",
+    "static/media/sun.svg": "/react-gh-pages/static/media/sun.bc8aeaa4.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.aaa94570.js",
+    "static/js/runtime-main.3db2534b.js",
     "static/css/2.1292276e.chunk.css",
     "static/js/2.a3249547.chunk.js",
     "static/css/main.1f0f7284.chunk.css",
-    "static/js/main.ecd6bb2c.chunk.js"
+    "static/js/main.ee14f07f.chunk.js"
   ]
 }
